@@ -32,7 +32,6 @@ test:
           command: npm install -g karma-cli
       - run:
           name: Test
-          #command: npm test
            command: karma start
       - run:
           name: Generate code coverage

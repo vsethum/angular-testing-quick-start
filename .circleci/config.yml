@@ -32,7 +32,7 @@ test:
           command: npm install -g karma-cli
       - run:
           name: Test
-           command: karma start
+          command: npm test
       - run:
           name: Generate code coverage
           command: './node_modules/.bin/nyc report --reporter=text-lcov'

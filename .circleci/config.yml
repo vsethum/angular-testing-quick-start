@@ -25,12 +25,15 @@ steps:
 test:
     docker:
       - image: circleci/node:4.8.2  
-      - image: mongo:3.4.4
     steps:
       - checkout
       - run:
+          name: Install npm with karma
+          command: npm install -g karma-cli
+      - run:
           name: Test
-          command: npm test
+          #command: npm test
+           command: karma start
       - run:
           name: Generate code coverage
           command: './node_modules/.bin/nyc report --reporter=text-lcov'
